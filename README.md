@@ -16,7 +16,7 @@ Crear una imagen desde el proyecto de claasp en local, pero antes hacer los sigu
 Añadir al archivo:
 ```bash
 DOCKER_IMG_NAME=claasp-lib
-...
+
 rundocker: builddocker
 	docker run -i -t $(DOCKER_IMG_NAME)
 ```
