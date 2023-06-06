@@ -1,5 +1,7 @@
 # Readme
 
+Configuración para usar JupyterLab configurando claasp.
+
 Los proyectos que están en repositorios separados en este repositorio están cada uno en su carpeta:
 
 - /backend → <https://github.com/yessica-rd/jupyter-server-testing>
