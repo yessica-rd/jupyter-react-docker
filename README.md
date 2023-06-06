@@ -9,14 +9,12 @@ Los proyectos que están en repositorios separados en este repositorio están ca
 
 Crear una imagen desde el proyecto de claasp en local, pero antes hacer los siguientes cambios:
 
-```bash
-
 ### Makefile
 
 Añadir al archivo:
 ```bash
 DOCKER_IMG_NAME=claasp-lib
-
+...
 rundocker: builddocker
 	docker run -i -t $(DOCKER_IMG_NAME)
 ```
