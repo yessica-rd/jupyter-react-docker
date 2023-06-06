@@ -1000,7 +1000,7 @@ c.ServerApp.port_retries = 50
 
 ## The directory to use for notebooks and kernels.
 #  Default: ''
-# c.ServerApp.root_dir = ''
+c.ServerApp.root_dir = '/home/sage/tii-claasp/claasp'
 
 ## The session manager class to use.
 #  Default: 'builtins.object'
@@ -1124,3 +1124,5 @@ c.ServerApp.use_redirect_file = True
 #          Should be in the form of an HTTP origin: ws[s]://hostname[:port]
 #  Default: ''
 # c.ServerApp.websocket_url = ''
+# c.Application.debug = True
+# c.InteractiveShellApp.extensions = ['pdb']

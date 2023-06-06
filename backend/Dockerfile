@@ -1,17 +1,26 @@
-FROM jupyter/datascience-notebook
+FROM claasp-lib
 
 # Copiar archivos del backend
-COPY . /app
+COPY . /app/backend
 
+# Instala JupyterLab
+RUN pip install jupyterlab
+
+# Configura JupyterLab
+RUN jupyter serverextension enable --py jupyterlab
+
+# Establece el directorio de trabajo
 WORKDIR /app/backend
 
 # Copiar el archivo de configuración
-COPY jupyter_lab_config.py /home/jovyan/.jupyter/jupyter_lab_config.py
+COPY jupyter_lab_config.py /root/.jupyter/jupyter_lab_config.py
 
-# Instalar las dependencias del backend (si las hay)
-# RUN pip install -r requirements.txt
+COPY kernel.json /usr/share/jupyter/kernels/python3/kernel.json
 
-# Ejecutar el servidor de JupyterLab
-CMD ["jupyter", "lab", "--ip=0.0.0.0"]
+# Expone el puerto de JupyterLab
+EXPOSE 8888
+
+# Comando de inicio para JupyterLab
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root"]
 
 
