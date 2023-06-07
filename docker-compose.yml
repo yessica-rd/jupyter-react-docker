@@ -4,7 +4,7 @@ services:
     build:
       context: ./backend
     ports:
-      - 8888:8888
+      - 8080:8080
 
   frontend:
     build:

@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import JupyterLabIntegration from './JupiterLabIntegration';
+import CodeServerIntegration from './CodeServerIntegration';
 
 function App() {
-  return (
-    <div className="App">
-      <JupyterLabIntegration />
-    </div>
-  );
+    return (
+        <div className="App">
+            <CodeServerIntegration />
+        </div>
+    );
 }
 
 export default App;
