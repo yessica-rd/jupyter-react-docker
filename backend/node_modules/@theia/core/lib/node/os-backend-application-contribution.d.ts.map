@@ -1,0 +1,1 @@
+{"version":3,"file":"os-backend-application-contribution.d.ts","sourceRoot":"","sources":["../../src/node/os-backend-application-contribution.ts"],"names":[],"mappings":"AAgBA,OAAO,KAAK,OAAO,MAAM,SAAS,CAAC;AAEnC,OAAO,EAAE,8BAA8B,EAAE,MAAM,uBAAuB,CAAC;AAGvE,qBACa,gCAAiC,YAAW,8BAA8B;IAEnF,SAAS,CAAC,GAAG,EAAE,OAAO,CAAC,WAAW,GAAG,IAAI;CAK5C"}

@@ -1,0 +1,26 @@
+{
+    "name": "@types/markdown-it-anchor",
+    "version": "4.0.4",
+    "description": "TypeScript definitions for MarkdownItAnchor (markdown-it-anchor)",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Josh Toft",
+            "url": "https://github.com/seryl",
+            "githubUsername": "seryl"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/markdown-it-anchor"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/markdown-it": "*"
+    },
+    "typesPublisherContentHash": "8b66ec022fbfcbd4e431b5c2977a6f46b9f4e98bfb99dba48f85289a06e88054",
+    "typeScriptVersion": "3.0"
+}

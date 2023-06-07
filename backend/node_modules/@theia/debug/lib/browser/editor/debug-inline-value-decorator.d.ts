@@ -1,0 +1,22 @@
+import { FrontendApplicationContribution } from '@theia/core/lib/browser/frontend-application';
+import * as monaco from '@theia/monaco-editor-core';
+import { IDecorationOptions } from '@theia/monaco-editor-core/esm/vs/editor/common/editorCommon';
+import { MonacoEditorService } from '@theia/monaco/lib/browser/monaco-editor-service';
+import { DebugPreferences } from '../debug-preferences';
+import { DebugStackFrame } from '../model/debug-stack-frame';
+import { DebugEditorModel } from './debug-editor-model';
+export declare const INLINE_VALUE_DECORATION_KEY = "inlinevaluedecoration";
+export declare class DebugInlineValueDecorator implements FrontendApplicationContribution {
+    protected readonly editorService: MonacoEditorService;
+    protected readonly preferences: DebugPreferences;
+    protected enabled: boolean;
+    protected wordToLineNumbersMap: Map<string, monaco.Position[]> | undefined;
+    onStart(): void;
+    calculateDecorations(debugEditorModel: DebugEditorModel, stackFrame: DebugStackFrame | undefined): Promise<IDecorationOptions[]>;
+    protected updateInlineValueDecorations(debugEditorModel: DebugEditorModel, model: monaco.editor.ITextModel | undefined, stackFrame: DebugStackFrame | undefined): Promise<IDecorationOptions[]>;
+    private createInlineValueDecorationsInsideRange;
+    protected formatInlineValue(...args: string[]): string;
+    private createInlineValueDecoration;
+    private getWordToPositionsMap;
+}
+//# sourceMappingURL=debug-inline-value-decorator.d.ts.map

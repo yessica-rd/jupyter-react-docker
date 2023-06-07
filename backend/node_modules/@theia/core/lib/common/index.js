@@ -1,0 +1,64 @@
+"use strict";
+// *****************************************************************************
+// Copyright (C) 2017 TypeFox and others.
+//
+// This program and the accompanying materials are made available under the
+// terms of the Eclipse Public License v. 2.0 which is available at
+// http://www.eclipse.org/legal/epl-2.0.
+//
+// This Source Code may also be made available under the following Secondary
+// Licenses when the conditions for such availability set forth in the Eclipse
+// Public License v. 2.0 are satisfied: GNU General Public License, version 2
+// with the GNU Classpath Exception which is available at
+// https://www.gnu.org/software/classpath/license.html.
+//
+// SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+// *****************************************************************************
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.URI = exports.environment = void 0;
+var environment_1 = require("@theia/application-package/lib/environment");
+Object.defineProperty(exports, "environment", { enumerable: true, get: function () { return environment_1.environment; } });
+__exportStar(require("./application-error"), exports);
+__exportStar(require("./cancellation"), exports);
+__exportStar(require("./command"), exports);
+__exportStar(require("./contribution-filter"), exports);
+__exportStar(require("./contribution-provider"), exports);
+__exportStar(require("./disposable"), exports);
+__exportStar(require("./event"), exports);
+__exportStar(require("./logger"), exports);
+__exportStar(require("./lsp-types"), exports);
+__exportStar(require("./menu"), exports);
+__exportStar(require("./message-rpc"), exports);
+__exportStar(require("./message-service"), exports);
+__exportStar(require("./message-service-protocol"), exports);
+__exportStar(require("./messaging"), exports);
+__exportStar(require("./nls"), exports);
+__exportStar(require("./numbers"), exports);
+__exportStar(require("./objects"), exports);
+__exportStar(require("./os"), exports);
+__exportStar(require("./path"), exports);
+__exportStar(require("./performance"), exports);
+__exportStar(require("./progress-service"), exports);
+__exportStar(require("./progress-service-protocol"), exports);
+__exportStar(require("./quick-pick-service"), exports);
+__exportStar(require("./reference"), exports);
+__exportStar(require("./resource"), exports);
+__exportStar(require("./selection"), exports);
+__exportStar(require("./selection-service"), exports);
+__exportStar(require("./strings"), exports);
+__exportStar(require("./types"), exports);
+var uri_1 = require("./uri");
+Object.defineProperty(exports, "URI", { enumerable: true, get: function () { return uri_1.default; } });
+__exportStar(require("./view-column"), exports);
+__exportStar(require("./telemetry"), exports);
+//# sourceMappingURL=index.js.map

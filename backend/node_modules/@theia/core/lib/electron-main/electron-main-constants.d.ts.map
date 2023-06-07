@@ -1,0 +1,1 @@
+{"version":3,"file":"electron-main-constants.d.ts","sourceRoot":"","sources":["../../src/electron-main/electron-main-constants.ts"],"names":[],"mappings":"AAgBA,eAAO,MAAM,8BAA8B,eAA2C,CAAC;AACvF,MAAM,WAAW,8BAA8B;IAC3C,QAAQ,CAAC,sBAAsB,EAAE,MAAM,CAAA;IACvC,QAAQ,CAAC,uBAAuB,EAAE,MAAM,CAAA;IACxC,QAAQ,CAAC,wBAAwB,EAAE,MAAM,CAAA;CAC5C"}

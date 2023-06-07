@@ -1,0 +1,28 @@
+import { OpenerService, WidgetOpenMode, ApplicationShell, PreferenceService } from '@theia/core/lib/browser';
+import { EditorWidget, EditorOpenerOptions, EditorManager } from '@theia/editor/lib/browser';
+import { MonacoToProtocolConverter } from './monaco-to-protocol-converter';
+import { IResourceEditorInput, ITextResourceEditorInput } from '@theia/monaco-editor-core/esm/vs/platform/editor/common/editor';
+import { StandaloneCodeEditorService } from '@theia/monaco-editor-core/esm/vs/editor/standalone/browser/standaloneCodeEditorService';
+import { StandaloneCodeEditor } from '@theia/monaco-editor-core/esm/vs/editor/standalone/browser/standaloneCodeEditor';
+import { ICodeEditor } from '@theia/monaco-editor-core/esm/vs/editor/browser/editorBrowser';
+import { ContextKeyService as VSCodeContextKeyService } from '@theia/monaco-editor-core/esm/vs/platform/contextkey/browser/contextKeyService';
+export declare class MonacoEditorService extends StandaloneCodeEditorService {
+    static readonly ENABLE_PREVIEW_PREFERENCE: string;
+    protected readonly openerService: OpenerService;
+    protected readonly m2p: MonacoToProtocolConverter;
+    protected readonly shell: ApplicationShell;
+    protected readonly editors: EditorManager;
+    protected readonly preferencesService: PreferenceService;
+    constructor(contextKeyService: VSCodeContextKeyService);
+    /**
+     * Monaco active editor is either focused or last focused editor.
+     */
+    getActiveCodeEditor(): StandaloneCodeEditor | null;
+    openCodeEditor(input: IResourceEditorInput, source: ICodeEditor | null, sideBySide?: boolean): Promise<ICodeEditor | null>;
+    protected findEditorWidgetByUri(widget: object | undefined, uriAsString: string): Promise<EditorWidget | undefined>;
+    protected createEditorOpenerOptions(input: IResourceEditorInput | ITextResourceEditorInput, source: ICodeEditor | null, sideBySide?: boolean): EditorOpenerOptions;
+    protected getSelection(input: IResourceEditorInput | ITextResourceEditorInput): EditorOpenerOptions['selection'];
+    protected getEditorOpenMode(input: IResourceEditorInput): WidgetOpenMode;
+    protected getWidgetOptions(source: ICodeEditor | null, sideBySide?: boolean): ApplicationShell.WidgetOptions | undefined;
+}
+//# sourceMappingURL=monaco-editor-service.d.ts.map

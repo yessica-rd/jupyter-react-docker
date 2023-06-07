@@ -1,0 +1,14 @@
+/// <reference types="react" />
+import { Container, interfaces } from '@theia/core/shared/inversify';
+import { TreeProps, ContextMenuRenderer, TreeNode, OpenerService, NodeProps } from '@theia/core/lib/browser';
+import { FileTreeModel, FileTreeWidget } from '../file-tree';
+export declare function createFileTreeBreadcrumbsContainer(parent: interfaces.Container): Container;
+export declare function createFileTreeBreadcrumbsWidget(parent: interfaces.Container): BreadcrumbsFileTreeWidget;
+export declare class BreadcrumbsFileTreeWidget extends FileTreeWidget {
+    readonly model: FileTreeModel;
+    protected readonly openerService: OpenerService;
+    constructor(props: TreeProps, model: FileTreeModel, contextMenuRenderer: ContextMenuRenderer);
+    protected createNodeAttributes(node: TreeNode, props: NodeProps): React.Attributes & React.HTMLAttributes<HTMLElement>;
+    protected tapNode(node?: TreeNode): void;
+}
+//# sourceMappingURL=filepath-breadcrumbs-container.d.ts.map

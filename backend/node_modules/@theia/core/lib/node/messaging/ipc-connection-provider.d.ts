@@ -1,0 +1,22 @@
+/// <reference types="node" />
+import * as cp from 'child_process';
+import { Channel, ConnectionErrorHandler, Disposable, ILogger } from '../../common';
+export interface ResolvedIPCConnectionOptions {
+    readonly serverName: string;
+    readonly entryPoint: string;
+    readonly logger: ILogger;
+    readonly args: string[];
+    readonly errorHandler?: ConnectionErrorHandler;
+    readonly env?: NodeJS.ProcessEnv;
+}
+export declare type IPCConnectionOptions = Partial<ResolvedIPCConnectionOptions> & {
+    readonly serverName: string;
+    readonly entryPoint: string;
+};
+export declare class IPCConnectionProvider {
+    protected readonly logger: ILogger;
+    listen(options: IPCConnectionOptions, acceptor: (connection: Channel) => void): Disposable;
+    protected doListen(options: ResolvedIPCConnectionOptions, acceptor: (connection: Channel) => void): Disposable;
+    protected fork(options: ResolvedIPCConnectionOptions): cp.ChildProcess;
+}
+//# sourceMappingURL=ipc-connection-provider.d.ts.map

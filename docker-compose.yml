@@ -4,12 +4,14 @@ services:
     build:
       context: ./backend
     ports:
-      - 8888:8888
+      - 3000:3000
 
   frontend:
     build:
       context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - 3000:3000
+      - 3001:3000
     volumes:
-      - ./frontend:/app
+      - ./frontend:/home/theia/workspace
+

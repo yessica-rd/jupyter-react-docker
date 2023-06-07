@@ -8,9 +8,10 @@ const JupyterLabIntegration = () => {
 
   return (
     <>
-      <h1>Jupyter Testing</h1>
+      <h1>Theia Testing 🤯</h1>
       <iframe
-        src="http://localhost:8888/lab"
+        title="theia IDE"
+        src="http://localhost:3000"
         style={iframeStyle}
       />
     </>

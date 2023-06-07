@@ -1,0 +1,13 @@
+/// <reference types="react" />
+import { FileNavigatorPreferences } from './navigator-preferences';
+import { PreferenceService } from '@theia/core/lib/browser/preferences/preference-service';
+import { FileTreeWidget } from '@theia/filesystem/lib/browser';
+import { Attributes, HTMLAttributes } from '@theia/core/shared/react';
+import { TreeNode } from '@theia/core/lib/browser';
+export declare class AbstractNavigatorTreeWidget extends FileTreeWidget {
+    protected readonly preferenceService: PreferenceService;
+    protected readonly navigatorPreferences: FileNavigatorPreferences;
+    protected init(): void;
+    protected decorateCaption(node: TreeNode, attrs: HTMLAttributes<HTMLElement>): Attributes & HTMLAttributes<HTMLElement>;
+}
+//# sourceMappingURL=abstract-navigator-tree-widget.d.ts.map

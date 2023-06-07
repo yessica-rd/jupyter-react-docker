@@ -12,7 +12,7 @@ RUN npm install
 RUN npm run build
 
 # Exponer el puerto en el que se ejecuta el servidor de desarrollo de React
-EXPOSE 3000
+EXPOSE 3001
 
 # Ejecutar el servidor de desarrollo de React
 CMD ["npm", "start"]
