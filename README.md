@@ -19,7 +19,7 @@ git clone https://github.com/Crypto-TII/claasp.git
 
 ### Makefile
 
-Añadir al archivo:
+Modificar:
 
 ```bash
 DOCKER_IMG_NAME=claasp-lib
