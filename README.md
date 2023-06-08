@@ -42,19 +42,3 @@ docker-compose up
 ```
 
 El proyecto se debe estar ejecutando en <http://localhost:3000>.
-
-## Error import ZZ
-
-Para evitar hacer `from sage.all import ZZ` en cada archivo, se puede hacer lo siguiente:
-
-- Abre una terminal en el contenedor de Docker que tiene el código.
-- `sudo apt-get install nano`
-- `nano /usr/lib/python3.10/sitecustomize.py`
-- Añadir esta configuración:
-
-```bash
-import sys
-from sage.all import *
-
-sys.modules[__name__].__dict__.update(ZZ=ZZ)
-```
