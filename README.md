@@ -9,7 +9,13 @@ Los proyectos que están en repositorios separados en este repositorio están ca
 
 ## Configurar claasp
 
-Crear una imagen desde el proyecto de claasp en local, pero antes hacer los siguientes cambios:
+- Clonar el proyecto de Crypto-TII:
+
+```bash
+git clone https://github.com/Crypto-TII/claasp.git
+```
+
+- Crear una imagen desde el proyecto de claasp en local, pero antes hacer los siguientes cambios:
 
 ### Makefile
 
@@ -25,20 +31,16 @@ rundocker: builddocker
 ### Dockerfile
 
 Añadir al final del archivo:
+
 ```bash
 COPY . .
 
 RUN make install
 ```
 
-Ejecutar:
+Una vez creada la imagen de claasp-lib:
 
-```bash
-cd frontend
-yarn install
-cd ..
-docker-compose up -d --force-recreate --build backend
-docker-compose up
-```
+- `docker-compose up -d --force-recreate --build backend`
+- `docker-compose up`
 
 El proyecto se debe estar ejecutando en <http://localhost:3000>.
