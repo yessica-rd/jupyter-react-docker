@@ -2,7 +2,12 @@ FROM claasp-lib
 
 # Copiar archivos del backend
 COPY . /app/backend
+
+# Para eliminar ventana de confiar del IDE
 COPY settings.json /root/.local/share/code-server/User/settings.json
+
+# Para evitar error import ZZ
+COPY sitecustomize.py /usr/lib/python3.10/sitecustomize.py
 
 # Actualizar paquetes e instalar dependencias necesarias
 RUN apt-get update && apt-get install -y curl wget git
