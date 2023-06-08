@@ -4,12 +4,10 @@ services:
     build:
       context: ./backend
     ports:
-      - 8888:8888
+      - 8080:8080
 
   frontend:
     build:
       context: ./frontend
     ports:
       - 3000:3000
-    volumes:
-      - ./frontend:/app
