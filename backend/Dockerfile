@@ -9,6 +9,9 @@ COPY settings.json /root/.local/share/code-server/User/settings.json
 # Para evitar error import ZZ
 COPY sitecustomize.py /usr/lib/python3.10/sitecustomize.py
 
+# Para vizualizar la carpeta compartida en un workspace
+COPY shared.code-workspace /root/.local/share/code-server/User/Workspaces/shared.code-workspace
+
 # Actualizar paquetes e instalar dependencias necesarias
 RUN apt-get update && apt-get install -y curl wget git
 
@@ -16,12 +19,9 @@ RUN apt-get update && apt-get install -y curl wget git
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 # Establecer el puerto de code-server
-EXPOSE 8080
-
-# Establece el directorio de trabajo
-WORKDIR /home/sage/tii-claasp/claasp
+EXPOSE 8080 8081
 
 # Ejecutar code-server cuando el contenedor se inicie
 RUN code-server --install-extension ms-python.python
-CMD ["code-server", "--bind-addr", "0.0.0.0:8080", ".", "--auth", "none"]
+CMD ["code-server", "--open", "/root/.local/share/code-server/User/Workspaces/shared.code-workspace", "--bind-addr", "0.0.0.0:8080", ".", "--auth", "none"]
 
