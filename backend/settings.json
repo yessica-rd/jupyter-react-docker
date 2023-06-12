@@ -1,3 +1,4 @@
 {
-  "security.workspace.trust.enabled": false
+  "security.workspace.trust.enabled": false,
+  "git.openRepositoryInParentFolders": "never"
 }
