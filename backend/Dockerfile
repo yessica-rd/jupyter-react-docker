@@ -1,8 +1,5 @@
 FROM claasp-lib
 
-# Copiar archivos del backend
-COPY . /app/backend
-
 # Para eliminar ventana de confiar del IDE
 COPY settings.json /root/.local/share/code-server/User/settings.json
 
@@ -15,6 +12,9 @@ RUN apt-get update && apt-get install -y curl wget git
 # Descargar e instalar code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
+# Instalar extensiones de code-server
+RUN pip install xeus-python notebook
+
 # Establecer el puerto de code-server
 EXPOSE 8080
 
@@ -23,5 +23,6 @@ WORKDIR /home/sage/tii-claasp/claasp
 
 # Ejecutar code-server cuando el contenedor se inicie
 RUN code-server --install-extension ms-python.python
+RUN code-server --install-extension ms-toolsai.jupyter
 CMD ["code-server", "--bind-addr", "0.0.0.0:8080", ".", "--auth", "none"]
 
