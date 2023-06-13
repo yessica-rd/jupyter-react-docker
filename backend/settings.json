@@ -1,4 +1,5 @@
 {
   "security.workspace.trust.enabled": false,
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "python.defaultInterpreterPath": "/usr/bin/python3.10"
 }
