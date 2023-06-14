@@ -18,8 +18,14 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh
 # Instalar extensiones de code-server
 RUN pip install xeus-python notebook
 
+# Instalar Linter y Formatter
+RUN pip install -U pycodestyle pydocstyle
+
 # Establecer el puerto de code-server
-EXPOSE 8080 8081
+EXPOSE 8080
+
+#COPY share_saved_files.py /home/sage/tii-claasp
+#RUN python3 /home/sage/tii-claasp/share_saved_files.py &
 
 # Ejecutar code-server cuando el contenedor se inicie
 RUN code-server --install-extension ms-python.python
