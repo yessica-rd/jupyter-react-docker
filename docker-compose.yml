@@ -2,28 +2,23 @@ version: '3'
 services:
   backend:
     container_name: code-server-backend-1
+    platform: linux/amd64
     build:
       context: ./backend
     ports:
       - 8080:8080
     volumes:
-      - code-server-volume:/home/shared
+      - community-volume:/home/community
+      - paquito-volume:/home/paquito/my_files/private
 
   frontend:
     container_name: code-server-frontend-1
+    platform: linux/amd64
     build:
       context: ./frontend
     ports:
       - 3000:3000
 
-  backend-2:
-    container_name: code-server-backend-2
-    build:
-      context: ./backend
-    ports:
-      - 8081:8081
-    volumes:
-      - code-server-volume:/home/shared
-
 volumes:
-  code-server-volume:
+  community-volume:
+  paquito-volume:

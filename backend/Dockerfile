@@ -1,8 +1,5 @@
 FROM claasp-lib
 
-# Copiar archivos del backend
-COPY . /app/backend
-
 # Para eliminar ventana de confiar del IDE
 COPY settings.json /root/.local/share/code-server/User/settings.json
 
@@ -18,10 +15,25 @@ RUN apt-get update && apt-get install -y curl wget git
 # Descargar e instalar code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
+# Instalar extensiones de code-server
+RUN pip install xeus-python notebook
+
+# Instalar Linter y Formatter
+RUN pip install -U pycodestyle pydocstyle
+
 # Establecer el puerto de code-server
-EXPOSE 8080 8081
+EXPOSE 8080
+
+# Crear la carpeta my_files, private y shared
+#RUN mkdir "/home/my_files"
+#RUN mkdir "/home/my_files/private"
+#RUN mkdir "/home/my_files/shared"
+#RUN mkdir "/home/community/paquito"
+
+#COPY share_saved_files.py /home/sage/tii-claasp
+#RUN python3 /home/sage/tii-claasp/share_saved_files.py &
 
 # Ejecutar code-server cuando el contenedor se inicie
 RUN code-server --install-extension ms-python.python
-CMD ["code-server", "--open", "/root/.local/share/code-server/User/Workspaces/shared.code-workspace", "--bind-addr", "0.0.0.0:8080", ".", "--auth", "none"]
-
+RUN code-server --install-extension ms-toolsai.jupyter
+CMD ["code-server", "--open", "/root/.local/share/code-server/User/Workspaces/shared.code-workspace", "--bind-addr", "0.0.0.0:8080", "--auth", "none"]
