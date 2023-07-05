@@ -12,11 +12,5 @@
                         "path": "/home/community/paquito",
                 }
         ],
-        "settings": {},
-        "autoCreateFile.files": [
-                {
-                    "fileName": "paquito",
-                    "isFolder": true
-                }
-            ]
+        "settings": {}
 }
