@@ -8,7 +8,8 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - code-server-volume:/home/shared
+      - community-volume:/home/community:ro
+      - ./paquito:/home/community/paquito
 
   frontend:
     container_name: code-server-frontend-1
@@ -19,4 +20,4 @@ services:
       - 3000:3000
 
 volumes:
-  code-server-volume:
+  community-volume:

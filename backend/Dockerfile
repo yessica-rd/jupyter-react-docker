@@ -9,6 +9,10 @@ COPY sitecustomize.py /usr/lib/python3.10/sitecustomize.py
 # Para vizualizar la carpeta compartida en un workspace
 COPY shared.code-workspace /root/.local/share/code-server/User/Workspaces/shared.code-workspace
 
+# RUN mkdir  /home/community
+
+# RUN mkdir /home/community/paquito
+
 # Actualizar paquetes e instalar dependencias necesarias
 RUN apt-get update && apt-get install -y curl wget git
 
@@ -23,9 +27,6 @@ RUN pip install -U pycodestyle pydocstyle
 
 # Establecer el puerto de code-server
 EXPOSE 8080
-
-#COPY share_saved_files.py /home/sage/tii-claasp
-#RUN python3 /home/sage/tii-claasp/share_saved_files.py &
 
 # Ejecutar code-server cuando el contenedor se inicie
 RUN code-server --install-extension ms-python.python
