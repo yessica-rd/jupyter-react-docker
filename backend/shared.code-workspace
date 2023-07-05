@@ -4,8 +4,19 @@
                         "path": "/home/sage/tii-claasp/claasp"
                 },
                 {
-                        "path": "/home/shared"
+                        "name": "Community",
+                        "path": "/home/community"
+                },
+                {
+                        "name": "Shared",
+                        "path": "/home/community/paquito",
                 }
         ],
-        "settings": {}
+        "settings": {},
+        "autoCreateFile.files": [
+                {
+                    "fileName": "paquito",
+                    "isFolder": true
+                }
+            ]
 }
