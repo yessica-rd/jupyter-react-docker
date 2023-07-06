@@ -8,8 +8,8 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - community-volume:/home/community
-      # - community-volume:/home/community:ro
+      - community-volume:/home/community:ro
+      - user-volume:/home/community/paquito
 
   frontend:
     container_name: code-server-frontend-1
@@ -21,3 +21,4 @@ services:
 
 volumes:
   community-volume:
+  user-volume:
