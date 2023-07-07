@@ -5,10 +5,10 @@
                 },
                 {
                         "name": "Community",
-                        "path": "/home/community"
+                        "path": "/home/community",
                 },
                 {
-                        "name": "Shared",
+                        "name": "My Files",
                         "path": "/home/community/paquito",
                 }
         ],
