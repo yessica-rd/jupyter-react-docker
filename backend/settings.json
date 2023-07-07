@@ -14,5 +14,8 @@
   "python.formatting.autopep8Args": [
     "--aggressive",
     "--aggressive"
-  ]
+  ],
+  "files.exclude": {
+    "**/*.ipynb": true
+  }
 }
