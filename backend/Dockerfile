@@ -1,7 +1,5 @@
 FROM claasp-lib
 
-RUN mkdir -p /home/community/paquito
-
 RUN sudo adduser --disabled-password paquito
 
 # Para evitar error import ZZ
@@ -15,6 +13,8 @@ RUN echo 'paquito ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/paquito
 RUN chmod 0440 /etc/sudoers.d/paquito
 
 USER paquito
+
+RUN sudo mkdir -p /home/community/paquito
 
 # Descargar e instalar code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
@@ -43,6 +43,8 @@ RUN chown root /home/paquito/.local/share/code-server/User/Workspaces/shared.cod
 RUN chown root /home/paquito/.local/share/code-server/User/settings.json
 RUN chown -R root /home/paquito/.local/share/code-server/extensions
 RUN chmod -R 755  /home/paquito/.local/share/code-server/extensions
+RUN chown -R root /home/community/paquito
+RUN chmod -R 775 /home/community/paquito
 RUN chmod 755  /home/paquito/.local/share/code-server/User/settings.json
 RUN chmod 755  /home/paquito/.local/share/code-server/User/Workspaces/shared.code-workspace
 
