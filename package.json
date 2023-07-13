@@ -1,0 +1,13 @@
+{
+  "name": "jupyter-react-docker",
+  "version": "1.0.0",
+  "description": "Configuración para usar JupyterLab configurando claasp.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.36.0"
+  }
+}
