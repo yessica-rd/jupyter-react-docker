@@ -1,6 +1,7 @@
 FROM claasp-lib
 
 RUN sudo adduser --disabled-password paquito
+RUN mkdir /home/community
 
 # Para evitar error import ZZ
 COPY sitecustomize.py /usr/lib/python3.10/sitecustomize.py
@@ -14,10 +15,10 @@ RUN chmod 0440 /etc/sudoers.d/paquito
 
 USER paquito
 
-RUN sudo mkdir -p /home/community/paquito
-
 # Descargar e instalar code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+RUN sudo mkdir /home/community/paquito
 
 # Instalar extensiones de code-server
 RUN sudo pip install xeus-python notebook
@@ -43,7 +44,8 @@ RUN chown root /home/paquito/.local/share/code-server/User/Workspaces/shared.cod
 RUN chown root /home/paquito/.local/share/code-server/User/settings.json
 RUN chown -R root /home/paquito/.local/share/code-server/extensions
 RUN chmod -R 755  /home/paquito/.local/share/code-server/extensions
-RUN chown -R root /home/community/paquito
+RUN chown -R root:paquito /home/community/paquito
+RUN chmod 755 /home/community
 RUN chmod -R 775 /home/community/paquito
 RUN chmod 755  /home/paquito/.local/share/code-server/User/settings.json
 RUN chmod 755  /home/paquito/.local/share/code-server/User/Workspaces/shared.code-workspace
