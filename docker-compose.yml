@@ -9,6 +9,8 @@ services:
       - 8080:8080
     volumes:
       - community-volume:/home/community
+      - user-volume:/home/community/paquito
+      - user-volume:/home/paquito/my-files/shared
 
   frontend:
     container_name: code-server-frontend-1
@@ -20,3 +22,4 @@ services:
 
 volumes:
   community-volume:
+  user-volume:
