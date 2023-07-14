@@ -1,3 +1,11 @@
 frontend/node_modules
 frontend/yarn.lock
+
 /.idea
+
+=======
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/node_modules/
+
